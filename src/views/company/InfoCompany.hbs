@@ -1,0 +1,26 @@
+<div class="row" style="margin-top: 20px;">
+    <div class="col col-lg-5">
+        <img style="width: 100%;" src="{{companyV.image}}" alt="">
+    </div>
+    <div class="col col-lg-7">
+        <h2 style="text-align: center ;" >{{companyV.name}}</h2>
+        <div >
+            <p>{{companyV.description}}</p>
+        </div>
+    </div>
+    <div class="col col-lg-12" >
+        
+        <ul style="list-style: none;margin-top: 30px;">
+            {{#each comments}}
+                <li >{{this.name}}: {{this.content}}</li>
+            {{/each}}
+        </ul>
+
+        <form method="post" action="/company/comment" style="width:100%;margin-top: 10px;text-align: end;position: relative;right: 50px; ">
+            <input style="display:none ;" type="text" name="idItiem" value={{idItiem}} >            
+            <input style="display:none ;" type="text" name="name" value={{nameComment}} >            
+            <input type="text" name="content" placeholder="comment"  style="width: 550px;display: inline-block;padding: 1px 8px ;border-radius: 5px;">
+            <input type="submit" value="done">
+        </form>
+    </div>
+</div>
