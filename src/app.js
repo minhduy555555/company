@@ -4,7 +4,7 @@ var bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 var cookieParser = require('cookie-parser')
 const app = express()
-const port = 3005
+const port =  process.env.PORT || 3000;
 const router = require('./router/index') 
 
 app.use(express.urlencoded())
